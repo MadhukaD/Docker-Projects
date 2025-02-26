@@ -1,115 +1,96 @@
-# Docker Projects Repository
+# 10 Docker Projects to Master Docker
 
-Welcome to my Docker projects repository! í ½íº€ This repository contains source codes and configurations for **10 Docker-based projects** that I have worked on. Each project includes a `Dockerfile`, necessary configurations, and setup instructions.
+Welcome to my Docker projects repository! í ½íº€ This repository contains source codes and configurations for **10 Docker-based projects**, ranging from basic containerization to advanced deployment strategies using Kubernetes and CI/CD automation.
 
 ## Projects Overview
 
-### 1. **Flask App with PostgreSQL**
-- A simple Flask web application that connects to a PostgreSQL database using Docker Compose.
-- **Tech Stack:** Flask, PostgreSQL, Docker, Docker Compose
-- **Files:**
-  - `app.py`
-  - `Dockerfile`
-  - `docker-compose.yml`
-  - `requirements.txt`
+### **Beginner-Level Projects**
 
-### 2. **Node.js & MongoDB REST API**
-- A REST API built with Node.js and Express, using MongoDB as the database.
-- **Tech Stack:** Node.js, Express, MongoDB, Docker
-- **Files:**
-  - `server.js`
-  - `Dockerfile`
-  - `docker-compose.yml`
-  - `package.json`
+#### 1. Basic Web Application with Docker
+- **Goal:** Learn to containerize a Flask/Node.js application.
+- **Key Concepts:** Writing a `Dockerfile`, building an image, and running a container.
+- **Files:** `app.py`, `Dockerfile`, `requirements.txt`
 
-### 3. **Nginx Reverse Proxy**
-- A Docker setup with Nginx acting as a reverse proxy for multiple backend services.
-- **Tech Stack:** Nginx, Docker, Reverse Proxy
-- **Files:**
-  - `nginx.conf`
-  - `Dockerfile`
-  - `docker-compose.yml`
+#### 2. Multi-Container Application with Docker Compose
+- **Goal:** Set up multiple services (Web + Database) using Docker Compose.
+- **Key Concepts:** `docker-compose.yml`, networking between containers.
+- **Files:** `app.py`, `docker-compose.yml`, `Dockerfile`
 
-### 4. **Django with PostgreSQL & Redis**
-- A Django-based web application using PostgreSQL as the database and Redis for caching.
-- **Tech Stack:** Django, PostgreSQL, Redis, Docker
-- **Files:**
-  - `app/`
-  - `Dockerfile`
-  - `docker-compose.yml`
-  - `requirements.txt`
+#### 3. Persistent Data Storage with Docker Volumes
+- **Goal:** Use named and bind mounts for data persistence in a database container.
+- **Key Concepts:** `docker volume`, MySQL/PostgreSQL persistent storage.
 
-### 5. **React Frontend with Express Backend**
-- A full-stack React application with an Express.js backend, both containerized.
-- **Tech Stack:** React, Node.js, Express, Docker
-- **Files:**
-  - `client/`
-  - `server/`
-  - `Dockerfile`
-  - `docker-compose.yml`
+#### 4. Docker Networking: Communication Between Containers
+- **Goal:** Understand container communication using custom networks.
+- **Key Concepts:** Creating and managing Docker networks.
 
-### 6. **MySQL & PHP Web App**
-- A simple PHP application that connects to a MySQL database using Docker.
-- **Tech Stack:** PHP, MySQL, Docker
-- **Files:**
-  - `index.php`
-  - `Dockerfile`
-  - `docker-compose.yml`
+#### 5. Scaling Applications with Docker Swarm
+- **Goal:** Deploy a scalable service using Docker Swarm.
+- **Key Concepts:** Load balancing, `docker swarm` commands, cluster management.
 
-### 7. **WordPress with MySQL**
-- A WordPress setup running in a Docker container with MySQL as the database.
-- **Tech Stack:** WordPress, MySQL, Docker
-- **Files:**
-  - `docker-compose.yml`
+---
 
-### 8. **ELK Stack (Elasticsearch, Logstash, Kibana)**
-- A centralized logging system using the ELK stack in Docker.
-- **Tech Stack:** Elasticsearch, Logstash, Kibana, Docker
-- **Files:**
-  - `docker-compose.yml`
-  - `logstash.conf`
+### **Advanced-Level Projects**
 
-### 9. **Jenkins CI/CD in Docker**
-- A Jenkins setup running in a Docker container for CI/CD pipelines.
-- **Tech Stack:** Jenkins, Docker
-- **Files:**
-  - `Dockerfile`
-  - `docker-compose.yml`
+#### 6. Secure Docker Deployment with Traefik and Let's Encrypt
+- **Goal:** Set up a reverse proxy with SSL encryption.
+- **Key Concepts:** Traefik configuration, HTTPS with Let's Encrypt, Basic Authentication.
+- **Files:** `traefik.yml`, `docker-compose.yml`
 
-### 10. **Kafka & Zookeeper Cluster**
-- A Dockerized Apache Kafka and Zookeeper cluster.
-- **Tech Stack:** Apache Kafka, Zookeeper, Docker
-- **Files:**
-  - `docker-compose.yml`
-  - `kafka-config/`
+#### 7. Scalable Microservices Architecture with Docker and Kubernetes
+- **Goal:** Deploy multiple microservices with an API Gateway.
+- **Key Concepts:** Kubernetes deployments, ConfigMaps, Secrets, and scaling.
+- **Files:** `k8s/deployment.yaml`, `k8s/service.yaml`
+
+#### 8. Continuous Integration & Deployment (CI/CD) for Dockerized Applications
+- **Goal:** Automate builds and deployments using GitHub Actions/Jenkins.
+- **Key Concepts:** CI/CD pipelines, pushing images to Docker Hub, deploying via automation.
+- **Files:** `.github/workflows/docker.yml`, `Jenkinsfile`
+
+#### 9. Multi-Stage Docker Build for Optimized Production Deployment
+- **Goal:** Reduce Docker image size using multi-stage builds.
+- **Key Concepts:** Optimized `Dockerfile`, running Flask with Gunicorn, Nginx as a reverse proxy.
+- **Files:** `Dockerfile`, `nginx.conf`, `docker-compose.yml`
+
+#### 10. Optimized Docker Image Deployment with Kubernetes
+- **Goal:** Deploy an optimized Docker image to Kubernetes.
+- **Key Concepts:** Kubernetes Services, scaling with replicas, environment variable management.
+- **Files:** `k8s/deployment.yaml`, `k8s/service.yaml`
 
 ---
 
 ## Getting Started
 
-1. **Clone the Repository:**
-   ```sh
-   git clone https://github.com/yourusername/docker-projects.git
-   cd docker-projects
-   ```
+### Clone the Repository
+```sh
+git clone https://github.com/yourusername/docker-projects.git
+cd docker-projects
+```
 
-2. **Run a Specific Project:**
-   ```sh
-   cd flask-postgres-app  # Change directory to the desired project
-   docker-compose up -d   # Start the containers
-   ```
+### Run a Specific Project
+```sh
+cd <project-directory>  # Change to the desired project
+```
+For Docker Compose-based projects:
+```sh
+docker-compose up --build -d
+```
+For Kubernetes-based projects:
+```sh
+kubectl apply -f k8s/
+```
 
-3. **Stop Containers:**
-   ```sh
-   docker-compose down
-   ```
+### Stop Containers
+```sh
+docker-compose down
+```
 
 ---
 
 ## Prerequisites
 - Install [Docker](https://www.docker.com/)
 - Install [Docker Compose](https://docs.docker.com/compose/install/)
-- Ensure required dependencies (Node.js, Python, etc.) are installed if running manually
+- Install [Kubernetes](https://kubernetes.io/docs/tasks/tools/)
 
 ---
 
